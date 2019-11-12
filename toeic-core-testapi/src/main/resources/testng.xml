@@ -2,6 +2,7 @@
 <suite name="TestAll">
     <test name="case1">
         <classes>
+
         </classes>
     </test>
 </suite>
