@@ -1,6 +1,5 @@
 package com.minhtung.core.persistence.entity;
 
-import javax.management.relation.Role;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
