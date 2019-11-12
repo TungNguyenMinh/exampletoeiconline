@@ -2,7 +2,6 @@
 <suite name="TestAll">
     <test name="case1">
         <classes>
-            <class name="com.minhtung.core.test.RoleTest"/>
         </classes>
     </test>
 </suite>
