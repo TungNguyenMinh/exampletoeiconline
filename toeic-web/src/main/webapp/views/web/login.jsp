@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="/common/taglib.jsp" %>
+<c:url var="formUrl" value="login.html"/>
 <html>
 <head>
     <title>Login Page</title>
@@ -15,18 +16,25 @@
 
             <div class="space-6"></div>
 
-            <form>
+            <form action="${formUrl}" method="post">
                 <fieldset>
                     <label class="block clearfix">
 						<span class="block input-icon input-icon-right">
-							<input type="text" class="form-control" placeholder="Tên đăng nhập"/>
+							<input type="text" class="form-control" placeholder="Tên đăng nhập" name="pojo.name"/>
 							<i class="ace-icon fa fa-user"></i>
 						</span>
                     </label>
 
                     <label class="block clearfix">
 						<span class="block input-icon input-icon-right">
-							<input type="password" class="form-control" placeholder="Mật khẩu"/>
+							<input type="password" class="form-control" placeholder="Mật khẩu" name="pojo.password"/>
+							<i class="ace-icon fa fa-lock"></i>
+						</span>
+                    </label>
+
+                    <label class="block clearfix">
+						<span class="block input-icon input-icon-right">
+							<input type="password" class="form-control" placeholder="Xác nhận mật khẩu" name="confirmPassword"/>
 							<i class="ace-icon fa fa-lock"></i>
 						</span>
                     </label>
@@ -39,7 +47,7 @@
                             <span class="lbl"> <fmt:message key="label.nho_dang_nhap" bundle="${lang}"/> </span>
                         </label>
 
-                        <button type="button" class="width-35 pull-right btn btn-sm btn-primary">
+                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
                             <i class="ace-icon fa fa-key"></i>
                             <span class="bigger-100"><fmt:message key="label.dang_nhap" bundle="${lang}"/> </span>
                         </button>

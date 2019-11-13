@@ -8,16 +8,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.minhtung.core.dto.UserDTO;
+import com.minhtung.core.web.util.FormUtil;
+import com.minhtung.web.controller.command.UserCommand;
+import org.apache.log4j.Logger;
+
 @WebServlet("/login.html")
 public class LoginController extends HttpServlet {
+    //Khai báo để sử dụng logger
+    private final Logger log = Logger.getLogger(this.getClass());
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
-        rd.forward(request,response);
+        rd.forward(request, response);
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /*UserCommand command = FormUtil.populate(UserCommand.class, request);
+        UserDTO pojo = command.getPojo();*/
+        RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
+        rd.forward(request, response);
     }
 }
