@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import com.minhtung.core.dto.UserDTO;
+import com.minhtung.core.service.UserService;
+import com.minhtung.core.service.impl.UserServiceImpl;
+import com.minhtung.core.web.common.WebConstant;
 import com.minhtung.core.web.util.FormUtil;
 import com.minhtung.web.controller.command.UserCommand;
 import org.apache.log4j.Logger;
@@ -24,8 +27,26 @@ public class LoginController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*UserCommand command = FormUtil.populate(UserCommand.class, request);
-        UserDTO pojo = command.getPojo();*/
+        UserCommand command = FormUtil.populate(UserCommand.class, request);
+        UserDTO pojo = command.getPojo();
+        UserService userService = new UserServiceImpl();
+        try {
+            if (userService.isUserExitst(pojo) != null) {
+                if (userService.findRoleByUser(pojo) != null && userService.findRoleByUser(pojo).getRoleDTO() != null) {
+                    if (userService.findRoleByUser(pojo).getRoleDTO().getName().equals(WebConstant.ROLE_ADMIN)) {
+                        request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
+                        request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Bạn là ADMIN");
+                    } else if (userService.findRoleByUser(pojo).getRoleDTO().getName().equals(WebConstant.ROLE_USER)) {
+                        request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_SUCCESS);
+                        request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Bạn là USER");
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            log.error(e.getMessage(), e);
+            request.setAttribute(WebConstant.ALERT, WebConstant.TYPE_ERROR);
+            request.setAttribute(WebConstant.MESSAGE_RESPONSE, "Tên hoặc mật khẩu sai");
+        }
         RequestDispatcher rd = request.getRequestDispatcher("/views/web/login.jsp");
         rd.forward(request, response);
     }

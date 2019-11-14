@@ -18,6 +18,14 @@
 
             <form action="${formUrl}" method="post">
                 <fieldset>
+                    <c:if test="${not empty messageResponse}">
+                        <div class="alert alert-block alert-${alert}">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                                ${messageResponse}
+                        </div>
+                    </c:if>
                     <label class="block clearfix">
 						<span class="block input-icon input-icon-right">
 							<input type="text" class="form-control" placeholder="Tên đăng nhập" name="pojo.name"/>
@@ -32,20 +40,20 @@
 						</span>
                     </label>
 
-                    <label class="block clearfix">
+                    <%--<label class="block clearfix">
 						<span class="block input-icon input-icon-right">
 							<input type="password" class="form-control" placeholder="Xác nhận mật khẩu" name="confirmPassword"/>
 							<i class="ace-icon fa fa-lock"></i>
 						</span>
-                    </label>
+                    </label>--%>
 
                     <div class="space"></div>
 
                     <div class="clearfix">
-                        <label class="inline">
+                        <%--<label class="inline">
                             <input type="checkbox" class="ace"/>
                             <span class="lbl"> <fmt:message key="label.nho_dang_nhap" bundle="${lang}"/> </span>
-                        </label>
+                        </label>--%>
 
                         <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
                             <i class="ace-icon fa fa-key"></i>
@@ -57,7 +65,7 @@
                 </fieldset>
             </form>
 
-            <div class="social-or-login center">
+            <%--<div class="social-or-login center">
                 <span class="bigger-110">Đăng nhập bằng</span>
             </div>
 
@@ -75,10 +83,10 @@
                 <a class="btn btn-danger">
                     <i class="ace-icon fa fa-google-plus"></i>
                 </a>
-            </div>
+            </div>--%>
         </div><!-- /.widget-main -->
 
-        <div class="toolbar clearfix">
+        <%--<div class="toolbar clearfix">
             <div>
                 <a href="#" data-target="#forgot-box" class="forgot-password-link">
                     <i class="ace-icon fa fa-arrow-left"></i>
@@ -92,7 +100,7 @@
                     <i class="ace-icon fa fa-arrow-right"></i>
                 </a>
             </div>
-        </div>
+        </div>--%>
     </div><!-- /.widget-body -->
 </div><!-- /.login-box -->
 
