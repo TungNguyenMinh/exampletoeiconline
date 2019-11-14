@@ -21,7 +21,7 @@
         <module>toeic-core-dao-impl</module>
         <module>toeic-core-persistence-data</module>
         <module>toeic-core-web</module>
-        <module>toeic-core-testapi</module>
+        <module>toeic-api-testdata</module>
     </modules>
 
     <properties>
