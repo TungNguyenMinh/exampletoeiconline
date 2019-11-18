@@ -57,7 +57,7 @@
 
                         <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
                             <i class="ace-icon fa fa-key"></i>
-                            <span class="bigger-100"><fmt:message key="label.dang_nhap" bundle="${lang}"/> </span>
+                            <span class="bigger-100">Đăng nhập </span>
                         </button>
                     </div>
 

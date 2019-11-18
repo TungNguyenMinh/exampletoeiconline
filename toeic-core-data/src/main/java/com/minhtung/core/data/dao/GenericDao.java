@@ -5,9 +5,14 @@ import java.util.List;
 
 public interface GenericDao<ID extends Serializable, T> {
     List<T> findAll();
-    T update (T entity);
-    void save (T entity);
+
+    T update(T entity);
+
+    void save(T entity);
+
     T findById(ID id);
-    Object findeByProperty (String property, Object value, String sortExpession, String sortDirection);
-    Integer delete(List <ID> ids);
+
+    Object findeByProperty(String property, Object value, String sortExpession, String sortDirection, Integer offsete, Integer limit);
+
+    Integer delete(List<ID> ids);
 }
