@@ -2,6 +2,7 @@ package com.minhtung.core.data.dao;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 public interface GenericDao<ID extends Serializable, T> {
     List<T> findAll();
@@ -12,7 +13,7 @@ public interface GenericDao<ID extends Serializable, T> {
 
     T findById(ID id);
 
-    Object findeByProperty(String property, Object value, String sortExpession, String sortDirection, Integer offsete, Integer limit);
+    Object findeByProperty(Map<String, Object> property, String sortExpession, String sortDirection, Integer offset, Integer limit);
 
     Integer delete(List<ID> ids);
 }

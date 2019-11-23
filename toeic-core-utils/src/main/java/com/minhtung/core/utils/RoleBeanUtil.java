@@ -1,4 +1,4 @@
-package com.minhtun.core.utils;
+package com.minhtung.core.utils;
 
 import com.minhtung.core.dto.RoleDTO;
 import com.minhtung.core.persistence.entity.RoleEntity;

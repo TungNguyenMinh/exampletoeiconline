@@ -1,7 +1,6 @@
-package com.minhtun.core.utils;
+package com.minhtung.core.utils;
 
 import com.minhtung.core.dto.UserDTO;
-import com.minhtung.core.persistence.entity.RoleEntity;
 import com.minhtung.core.persistence.entity.UserEntity;
 
 public class UserBeanUtil {

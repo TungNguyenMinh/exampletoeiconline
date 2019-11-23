@@ -1,6 +1,6 @@
 package com.minhtung.core.service.impl;
 
-import com.minhtun.core.utils.UserBeanUtil;
+import com.minhtung.core.utils.UserBeanUtil;
 import com.minhtung.core.dao.UserDao;
 import com.minhtung.core.daoimpl.UserDaoImpl;
 import com.minhtung.core.dto.UserDTO;

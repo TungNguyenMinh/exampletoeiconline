@@ -3,6 +3,8 @@
     <test name="case1">
         <classes>
             <class name="com.minhtung.core.testapi.LoginTest"/>
+            <class name="com.minhtung.core.testapi.ListenGuidelineTest"/>
+            <class name="com.minhtung.core.testapi.reviewHashMap"/>
         </classes>
     </test>
 </suite>
